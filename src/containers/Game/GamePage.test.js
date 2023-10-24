@@ -1,9 +1,20 @@
 import React from "react";
-import { render, screen } from "test-utils";
+import { render, screen, fireEvent } from "test-utils";
 import GamePage from "./GamePage";
 
-test("renders Game page with 14 cards", () => {
-  render(<GamePage />);
-  const cards = screen.queryAllByRole("presentation");
-  expect(cards).toHaveLength(14);
+describe("Game page", () => {
+  it("should render game page with 14 cards", () => {
+    render(<GamePage />);
+    const cards = screen.queryAllByRole("presentation");
+    expect(cards).toHaveLength(14);
+  });
+
+  it("should click on the first card and reveal it", () => {
+    render(<GamePage />);
+    const cards = screen.queryAllByRole("presentation");
+    fireEvent.click(cards[0]);
+
+    const cardName = screen.getByText(/carta/i);
+    expect(cardName).toBeInTheDocument();
+  });
 });

@@ -1,9 +1,11 @@
 import React from "react";
-import { render } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 import App from "./App";
 
-test("renders call to action", () => {
-  const { getByText } = render(<App />);
-  const linkElement = getByText(/iniciar jogo/i);
-  expect(linkElement).toBeInTheDocument();
+describe("Main app", () => {
+  it("should render the start game button", () => {
+    render(<App />);
+    const linkElement = screen.getByText(/iniciar jogo/i);
+    expect(linkElement).toBeInTheDocument();
+  });
 });

@@ -5,7 +5,7 @@ import VictoryDialog from "./VictoryDialog";
 const onCloseVictoryDialog = jest.fn();
 const onStartGame = jest.fn();
 
-describe("Vistory dialog", () => {
+describe("Victory dialog", () => {
   it("should render the Victory dialog when isOpen is true", () => {
     render(
       <VictoryDialog

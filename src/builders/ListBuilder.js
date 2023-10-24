@@ -32,7 +32,7 @@ class ListBuilder {
 
     this.list = newList;
 
-    return this.list;
+    return this;
   }
 
   build() {

@@ -37,6 +37,7 @@
   "jest": {
     "collectCoverageFrom": [
       "src/**/*.js",
+      "!src/store/sagas.js",
       "!src/reportWebVitals.js",
       "!src/index.js"
     ]
